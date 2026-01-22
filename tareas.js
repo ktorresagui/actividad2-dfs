@@ -11,14 +11,15 @@ const escapeHTML = (str) => {
 
 const formatDate = (ts) => {
     const d = new Date(ts)
-    return d.toLocaleString("es-MX", { dateStyle: "medium", timeStyle: "short" })
+    return d.toLocaleString("es-MX", { dateStyle: "medium" })
 }
 
 class Tarea {
-    constructor(nombre, estado = "pendiente", id = makeId()) {
+    constructor(nombre, estado = "pendiente", id = makeId(), fecha = Date.now()) {
         this.id = id
         this.nombre = String(nombre ?? "")
         this.estado = estado === "completada" ? "completada" : "pendiente"
+        this.fecha = fecha
     }
 
     toggle() {
@@ -29,15 +30,12 @@ class Tarea {
         this.nombre = String(nuevoNombre ?? "")
     }
 
-    eliminar() {
-        return true
-    }
-
     toJSON() {
         return {
             id: this.id,
             nombre: this.nombre,
             estado: this.estado,
+            fecha: this.fecha
         }
     }
 
@@ -45,7 +43,8 @@ class Tarea {
         const nombre = typeof obj?.nombre === "string" ? obj.nombre : ""
         const estado = obj?.estado === "completada" ? "completada" : "pendiente"
         const id = typeof obj?.id === "string" && obj.id ? obj.id : makeId()
-        return new Tarea(nombre, estado, id)
+        const fecha = typeof obj?.fecha === "number" ? obj.fecha : Date.now()
+        return new Tarea(nombre, estado, id, fecha)
     }
 }
 
@@ -172,6 +171,7 @@ const templateTask = (t) => {
     const nameClass = done ? "task-name is-done" : "task-name"
     const actionText = done ? "Reabrir" : "Completar"
     const safeName = escapeHTML(t.nombre)
+    const fecha = formatDate(t.fecha)
 
     return `
         <li class="task-item" data-id="${t.id}">
@@ -180,6 +180,11 @@ const templateTask = (t) => {
                     <span class="${badgeClass}">${badgeText}</span>
                     <span class="${nameClass}" title="${safeName}">${safeName}</span>
                 </div>
+
+                <div class="task-meta">
+                    <span>📅 ${fecha}</span>
+                </div>
+
                 <div class="edit-area" data-open="0"></div>
             </div>
 
