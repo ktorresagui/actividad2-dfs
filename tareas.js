@@ -9,9 +9,10 @@ const escapeHTML = (str) => {
     return div.innerHTML
 }
 
+// SOLO FECHA (sin hora)
 const formatDate = (ts) => {
     const d = new Date(ts)
-    return d.toLocaleString("es-MX", { dateStyle: "medium" })
+    return d.toLocaleDateString("es-MX", { dateStyle: "medium" })
 }
 
 class Tarea {
@@ -63,9 +64,8 @@ class GestorDeTareas {
         return t
     }
 
+    // CORRECCIÓN: ya no llamamos a t.eliminar()
     eliminar(id) {
-        const t = this.buscar(id)
-        if (t) t.eliminar()
         this.tareas = this.tareas.filter(x => x.id !== id)
         this.guardar()
     }
@@ -378,3 +378,4 @@ lista.addEventListener("keydown", (e) => {
 })
 
 render()
+
