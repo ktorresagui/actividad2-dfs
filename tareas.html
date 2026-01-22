@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Totalplay</title>
+    <link rel="stylesheet" href="tareas.css">
+    <link rel="icon" type="image/png" href="icono.png">
+</head>
+<body>
+
+    <header class="page-header">
+        <div class="container">
+
+            <div class="topbar">
+                <a href="index.html" class="brand">
+                    <img src="logo.png" alt="Logo de Totalplay" class="logo">
+                </a>
+
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+
+                <label for="nav-toggle" class="hamburger" aria-label="Abrir menú" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <nav class="nav" aria-label="Menú principal">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="tareas.html" aria-current="page">Tareas</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-content">
+                <h1 class="page-title">Gestor de <span class="amarillo">Tareas</span></h1>
+                <p class="hero-text">Gestión de tareas como <span class="verde">Completada</span> o <span class="amarillo">Pendiente</span>.</p>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="page-main">
+        <div class="container">
+
+            <section class="panel">
+                <div class="panel-head">
+                    <h2>Crear tarea</h2>
+                    <div class="stats" aria-live="polite">
+                        <span class="pill">Total: <strong id="stat-total">0</strong></span>
+                        <span class="pill">Pendientes: <strong id="stat-pend">0</strong></span>
+                        <span class="pill">Completadas: <strong id="stat-done">0</strong></span>
+                    </div>
+                </div>
+
+                <div id="mensaje" class="message" role="status" aria-live="polite"></div>
+
+                <form id="form-tarea" class="task-form" autocomplete="off">
+                    <div class="field">
+                        <label for="nombre-tarea">Nombre de la tarea</label>
+                        <input type="text" id="nombre-tarea" name="nombre-tarea" placeholder="Ejemplo: Revisar velocidad de internet" required>
+                    </div>
+
+                    <div class="field-inline">
+                        <label class="check">
+                            <input type="checkbox" id="tarea-completa">
+                            <span>Marcar como completada</span>
+                        </label>
+                    </div>
+
+                    <div class="actions">
+                        <button type="submit" class="btn primary" id="btn-agregar">Agregar Tarea</button>
+                        <button type="button" class="btn ghost" id="btn-limpiar">Limpiar</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="panel">
+                <div class="panel-head">
+                    <h2>Lista</h2>
+
+                    <div class="filters">
+                        <button type="button" class="chip is-active" data-filter="todas">Todas</button>
+                        <button type="button" class="chip" data-filter="pendientes">Pendientes</button>
+                        <button type="button" class="chip" data-filter="completadas">Completadas</button>
+                    </div>
+                </div>
+
+                <ul id="lista-tareas" class="task-list" aria-live="polite"></ul>
+
+                <div class="list-footer">
+                    <button type="button" class="btn danger" id="btn-borrar-todo">Eliminar todas</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Síguenos en redes sociales:</p>
+
+            <a href="https://www.facebook.com/Totalplay/" target="_blank" rel="noopener noreferrer">Facebook</a> |
+            <a href="https://www.instagram.com/totalplaymx/" target="_blank" rel="noopener noreferrer">Instagram</a> |
+            <a href="https://x.com/totalplaymx" target="_blank" rel="noopener noreferrer">Twitter</a>
+
+            <p>2026 Totalplay. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="tareas.js"></script>
+</body>
+</html>

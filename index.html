@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Totalplay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="icono.png">
+</head>
+<body>
+
+    <header id="encabezado">
+        <div class="container">
+
+            <div class="topbar">
+                <a href="index.html" class="brand" aria-label="Ir al inicio">
+                    <img src="logo.png" alt="Logo de Totalplay" class="logo">
+                </a>
+
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+                <label for="nav-toggle" class="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <nav class="nav" aria-label="Navegación principal">
+                    <ul class="nav-links">
+                        <li><a href="index.html" aria-current="page">Inicio</a></li>
+                        <li><a href="tareas.html">Tareas</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <p class="hero-text">
+                Conectando México con servicios de
+                <span class="azul">internet</span>,
+                <span class="rojo">televisión</span> y
+                <span class="verde">telefonía</span>.
+            </p>
+
+            <div class="misiones-cuadros">
+                <div class="cuadro">
+                    <h2>Misión</h2>
+                    <p>Brindar servicios de telecomunicaciones de alta calidad con <span class="amarillo">innovación</span> y confiabilidad.</p>
+                </div>
+
+                <div class="cuadro">
+                    <h2>Visión</h2>
+                    <p>Ser la empresa líder en <span class="azul">conectividad</span> y entretenimiento en México.</p>
+                </div>
+
+                <div class="cuadro">
+                    <h2>Valores</h2>
+                    <ul>
+                        <li><span class="rojo">Responsabilidad</span></li>
+                        <li><span class="verde">Compromiso</span></li>
+                        <li><span class="amarillo">Innovación</span></li>
+                        <li><span class="azul">Transparencia</span></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <section id="servicios" aria-labelledby="titulo-servicios">
+        <div class="container">
+            <h2 id="titulo-servicios">Servicios Destacados</h2>
+
+            <div class="cards">
+                <article class="card">
+                    <img src="internet.webp" alt="Servicio de Internet Totalplay" loading="lazy">
+                    <h3>Internet de Alta Velocidad</h3>
+                    <p>Conexión de fibra óptica rápida y confiable para hogares y <span class="azul">negocios</span>.</p>
+                </article>
+
+                <article class="card">
+                    <img src="tv.webp" alt="Servicio de Televisión Totalplay" loading="lazy">
+                    <h3>Televisión Interactiva</h3>
+                    <p>Disfruta canales HD, contenido bajo demanda y plataformas de <span class="rojo">streaming</span>.</p>
+                </article>
+
+                <article class="card">
+                    <img src="telefonia.webp" alt="Servicio de Telefonía Totalplay" loading="lazy">
+                    <h3>Telefonía</h3>
+                    <p>Llamadas locales, nacionales e internacionales con excelente <span class="verde">calidad</span>.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" aria-labelledby="titulo-contacto">
+        <div class="container">
+            <h2 id="titulo-contacto">Contáctanos</h2>
+
+            <div id="mensaje-form" class="message" role="status" aria-live="polite"></div>
+
+            <form id="form-contacto" novalidate>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" autocomplete="email" required>
+
+                <label for="mensaje-contacto">Mensaje:</label>
+                <textarea id="mensaje-contacto" name="mensaje" rows="4" required></textarea>
+
+                <button type="submit" id="btn-enviar">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Síguenos en redes sociales:</p>
+
+            <a href="https://www.facebook.com/Totalplay/" target="_blank" rel="noopener noreferrer">Facebook</a> |
+            <a href="https://www.instagram.com/totalplaymx/" target="_blank" rel="noopener noreferrer">Instagram</a> |
+            <a href="https://x.com/totalplaymx" target="_blank" rel="noopener noreferrer">Twitter</a>
+
+            <p>2026 Totalplay. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="main.js" defer></script>
+    <script src="tareas.js" defer></script>
+</body>
+</html>
